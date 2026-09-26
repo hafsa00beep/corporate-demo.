@@ -66,14 +66,14 @@
 <body>
 
   <header>
-    <div class="logo">شعار المؤسسة</div>
+    <div class="logo" id="logo-text">شعار المؤسسة</div>
     <ul class="nav-links">
-      <li><a href="javascript:void(0)" onclick="showPage('home')">الرئيسية</a></li>
-      <li><a href="javascript:void(0)" onclick="showPage('about')">من نحن</a></li>
-      <li><a href="javascript:void(0)" onclick="showPage('vision')">الرؤية والرسالة</a></li>
-      <li><a href="javascript:void(0)" onclick="showPage('ceo')">كلمة رئيس المؤسسة</a></li>
-      <li><a href="javascript:void(0)" onclick="showPage('services')">الخدمات</a></li>
-      <li><a href="javascript:void(0)" onclick="showPage('contact')">تواصل معنا</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('home')" id="nav-home">الرئيسية</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('about')" id="nav-about">من نحن</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('vision')" id="nav-vision">الرؤية والرسالة</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('ceo')" id="nav-ceo">كلمة رئيس المؤسسة</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('services')" id="nav-services">الخدمات</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('contact')" id="nav-contact">تواصل معنا</a></li>
     </ul>
     <button class="lang-btn" onclick="toggleLang()" id="lang-btn">English</button>
   </header>
@@ -112,10 +112,11 @@
     <!-- 6. تواصل معنا -->
     <div id="contact" class="page-section">
       <h1 id="contact-title">تواصل معنا</h1>
-      <form onsubmit="event.preventDefault(); alert('تم إرسال الرسالة بنجاح!');">
-        <input type="text" id="name-ph" placeholder="الاسم" required>
-        <input type="email" id="email-ph" placeholder="البريد الإلكتروني" required>
-        <textarea rows="4" id="msg-ph" placeholder="الرسالة" required></textarea>
+      <!-- هنا ربطنا الفورم بـ Formspree عشان الرسالة توصل بجد ببريد العميل -->
+      <form action="https://formspree.io/f/xbjnqpyz" method="POST">
+        <input type="text" name="name" id="name-ph" placeholder="الاسم" required>
+        <input type="email" name="email" id="email-ph" placeholder="البريد الإلكتروني" required>
+        <textarea rows="4" name="message" id="msg-ph" placeholder="الرسالة" required></textarea>
         <button type="submit" class="submit-btn" id="send-btn">إرسال الرسالة</button>
       </form>
     </div>
@@ -137,7 +138,18 @@
         html.dir = 'ltr';
         html.lang = 'en';
         langBtn.innerText = 'عربي';
-        document.getElementById('home-title').innerText = 'Home Page';
+
+        // تحويل القائمة والشعار للإنجليزي
+        document.getElementById('logo-text').innerText = 'Enterprise Logo';
+        document.getElementById('nav-home').innerText = 'Home';
+        document.getElementById('nav-about').innerText = 'About Us';
+        document.getElementById('nav-vision').innerText = 'Vision & Mission';
+        document.getElementById('nav-ceo').innerText = 'CEO Message';
+        document.getElementById('nav-services').innerText = 'Services';
+        document.getElementById('nav-contact').innerText = 'Contact Us';
+
+        // تحويل محتوى الصفحات للإنجليزي
+        document.getElementById('home-title').innerText = 'Home';
         document.getElementById('home-desc').innerText = 'Welcome to the official enterprise website. We deliver professional solutions.';
         document.getElementById('about-title').innerText = 'About Us';
         document.getElementById('about-desc').innerText = 'A leading establishment providing high quality products and services.';
@@ -156,6 +168,17 @@
         html.dir = 'rtl';
         html.lang = 'ar';
         langBtn.innerText = 'English';
+
+        // تحويل القائمة والشعار للعربي
+        document.getElementById('logo-text').innerText = 'شعار المؤسسة';
+        document.getElementById('nav-home').innerText = 'الرئيسية';
+        document.getElementById('nav-about').innerText = 'من نحن';
+        document.getElementById('nav-vision').innerText = 'الرؤية والرسالة';
+        document.getElementById('nav-ceo').innerText = 'كلمة رئيس المؤسسة';
+        document.getElementById('nav-services').innerText = 'الخدمات';
+        document.getElementById('nav-contact').innerText = 'تواصل معنا';
+
+        // تحويل محتوى الصفحات للعربي
         document.getElementById('home-title').innerText = 'الرئيسية';
         document.getElementById('home-desc').innerText = 'مرحباً بكم في موقع المؤسسة الرسمي. نقدم أفضل الحلول والخدمات الاحترافية بأسلوب عصري ومتطابق مع هويتنا الرسمية.';
         document.getElementById('about-title').innerText = 'من نحن';
