@@ -8,110 +8,115 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; transition: all 0.3s ease; }
     body {
-      background-color: #0d1b2a; /* أزرق ملكي داكن */
-      color: #f5f0eb; /* بيج */
+      background-color: #0b2545; /* أزرق ملكي */
+      color: #eef4f8; /* بيج */
       font-family: 'Tajawal', sans-serif;
       line-height: 1.6;
     }
-    nav {
-      background: #1b263b;
+    header {
+      background: #134074;
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 2px solid #d4a373;
+      border-bottom: 2px solid #8da9c4;
     }
-    .logo { font-size: 1.4rem; font-weight: bold; color: #d4a373; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #8da9c4; }
     .nav-links { display: flex; gap: 15px; list-style: none; }
-    .nav-links a { color: #f5f0eb; text-decoration: none; font-size: 0.95rem; }
-    .nav-links a:hover { color: #d4a373; }
+    .nav-links a { color: #eef4f8; text-decoration: none; font-size: 0.95rem; font-weight: bold; }
+    .nav-links a:hover { color: #8da9c4; }
     .lang-btn {
-      background: #d4a373;
-      color: #0d1b2a;
+      background: #8da9c4;
+      color: #0b2545;
       border: none;
-      padding: 6px 14px;
-      border-radius: 6px;
+      padding: 8px 16px;
+      border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
     }
+    .lang-btn:hover { background: #eef4f8; }
     .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-    .page-section { display: none; background: #1b263b; padding: 30px; border-radius: 12px; border: 1px solid #415a77; }
+    .page-section { display: none; background: #134074; padding: 35px; border-radius: 16px; border: 1px solid #8da9c4; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
     .page-section.active { display: block; }
-    h1, h2 { color: #d4a373; margin-bottom: 15px; }
-    form { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
+    h1 { color: #8da9c4; margin-bottom: 15px; font-weight: 700; }
+    p { color: #eef4f8; font-size: 1.1rem; }
+    form { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
     input, textarea {
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #415a77;
-      background: #0d1b2a;
-      color: #f5f0eb;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #8da9c4;
+      background: #0b2545;
+      color: #eef4f8;
       font-family: 'Tajawal';
+      font-size: 1rem;
     }
     button.submit-btn {
-      background: #d4a373;
-      color: #0d1b2a;
-      padding: 10px;
+      background: #8da9c4;
+      color: #0b2545;
+      padding: 12px;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: bold;
+      font-size: 1rem;
       cursor: pointer;
     }
+    button.submit-btn:hover { background: #eef4f8; }
   </style>
 </head>
 <body>
 
-  <nav>
+  <header>
     <div class="logo">شعار المؤسسة</div>
     <ul class="nav-links">
-      <li><a href="#" onclick="showPage('home')">الرئيسية</a></li>
-      <li><a href="#" onclick="showPage('about')">من نحن</a></li>
-      <li><a href="#" onclick="showPage('vision')">الرؤية والرسالة</a></li>
-      <li><a href="#" onclick="showPage('ceo')">كلمة رئيس المؤسسة</a></li>
-      <li><a href="#" onclick="showPage('services')">الخدمات</a></li>
-      <li><a href="#" onclick="showPage('contact')">تواصل معنا</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('home')">الرئيسية</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('about')">من نحن</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('vision')">الرؤية والرسالة</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('ceo')">كلمة رئيس المؤسسة</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('services')">الخدمات</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('contact')">تواصل معنا</a></li>
     </ul>
     <button class="lang-btn" onclick="toggleLang()" id="lang-btn">English</button>
-  </nav>
+  </header>
 
   <div class="container">
     <!-- 1. الرئيسية -->
     <div id="home" class="page-section active">
-      <h1 id="home-title">مرحباً بكم في موقع المؤسسة</h1>
-      <p id="home-desc">هذا النص تعريفي عن خدماتنا ومنتجاتنا، يتم استبداله بمحتوى المؤسسة الجاهز.</p>
+      <h1 id="home-title">الرئيسية</h1>
+      <p id="home-desc">مرحباً بكم في موقع المؤسسة الرسمي. نقدم أفضل الحلول والخدمات الاحترافية بأسلوب عصري ومتطابق مع هويتنا الرسمية.</p>
     </div>
 
     <!-- 2. من نحن -->
     <div id="about" class="page-section">
       <h1 id="about-title">من نحن</h1>
-      <p id="about-desc">مؤسسة متخصصة تقدم أحدث الحلول والخدمات الاحترافية.</p>
+      <p id="about-desc">مؤسسة رائدة متخصصة في تقديم خدمات ومنتجات عالية الجودة وفق أعلى المعايير الرسمية.</p>
     </div>
 
     <!-- 3. الرؤية والرسالة -->
     <div id="vision" class="page-section">
       <h1 id="vision-title">الرؤية والرسالة</h1>
-      <p id="vision-desc">رؤيتنا هي الريادة والتميز، ورسالتنا تقديم أفضل جودة لعملائنا.</p>
+      <p id="vision-desc">رؤيتنا: الريادة والتميز في مجالنا. رسالتنا: تقديم حلول متكاملة تضمن رضا عملائنا وتلبي جميع تطلعاتهم.</p>
     </div>
 
     <!-- 4. كلمة رئيس المؤسسة -->
     <div id="ceo" class="page-section">
       <h1 id="ceo-title">كلمة رئيس المؤسسة</h1>
-      <p id="ceo-desc">يسرنا ويسعدنا تقديم أفضل الخدمات لكم والعمل على تطوير قطاعنا باستمرار.</p>
+      <p id="ceo-desc">نعتز بتقتكم المستمرة بنا ونسعى دائماً لتطوير منتجاتنا وخدماتنا بما يخدم تطلعات عملائنا وشركائنا.</p>
     </div>
 
     <!-- 5. الخدمات -->
     <div id="services" class="page-section">
       <h1 id="services-title">الخدمات والمنتجات</h1>
-      <p id="services-desc">عرض المنتجات والخدمات الرئيسية للمؤسسة.</p>
+      <p id="services-desc">استعراض الخدمة/المنتج الحالي المتاح لدى المؤسسة مع توضيح لكافة التفاصيل الخاصة به.</p>
     </div>
 
     <!-- 6. تواصل معنا -->
     <div id="contact" class="page-section">
       <h1 id="contact-title">تواصل معنا</h1>
       <form onsubmit="event.preventDefault(); alert('تم إرسال الرسالة بنجاح!');">
-        <input type="text" placeholder="الاسم" required>
-        <input type="email" placeholder="البريد الإلكتروني" required>
-        <textarea rows="4" placeholder="الرسالة" required></textarea>
-        <button type="submit" class="submit-btn">إرسال الرسالة</button>
+        <input type="text" id="name-ph" placeholder="الاسم" required>
+        <input type="email" id="email-ph" placeholder="البريد الإلكتروني" required>
+        <textarea rows="4" id="msg-ph" placeholder="الرسالة" required></textarea>
+        <button type="submit" class="submit-btn" id="send-btn">إرسال الرسالة</button>
       </form>
     </div>
   </div>
@@ -132,32 +137,40 @@
         html.dir = 'ltr';
         html.lang = 'en';
         langBtn.innerText = 'عربي';
-        document.getElementById('home-title').innerText = 'Welcome to Our Enterprise';
-        document.getElementById('home-desc').innerText = 'This is a showcase website for our services.';
+        document.getElementById('home-title').innerText = 'Home Page';
+        document.getElementById('home-desc').innerText = 'Welcome to the official enterprise website. We deliver professional solutions.';
         document.getElementById('about-title').innerText = 'About Us';
-        document.getElementById('about-desc').innerText = 'We are a leading enterprise offering professional services.';
+        document.getElementById('about-desc').innerText = 'A leading establishment providing high quality products and services.';
         document.getElementById('vision-title').innerText = 'Vision & Mission';
-        document.getElementById('vision-desc').innerText = 'Our vision is excellence and our mission is quality.';
+        document.getElementById('vision-desc').innerText = 'Vision: Leadership & Excellence. Mission: Delivering integrated solutions for customer satisfaction.';
         document.getElementById('ceo-title').innerText = 'CEO Message';
-        document.getElementById('ceo-desc').innerText = 'Welcome to our official website.';
-        document.getElementById('services-title').innerText = 'Our Services';
-        document.getElementById('services-desc').innerText = 'Explore our product and service offerings.';
+        document.getElementById('ceo-desc').innerText = 'We value your trust and continuously work to enhance our offerings.';
+        document.getElementById('services-title').innerText = 'Products & Services';
+        document.getElementById('services-desc').innerText = 'Showcase of current enterprise products and specialized services.';
         document.getElementById('contact-title').innerText = 'Contact Us';
+        document.getElementById('name-ph').placeholder = 'Your Name';
+        document.getElementById('email-ph').placeholder = 'Your Email';
+        document.getElementById('msg-ph').placeholder = 'Your Message';
+        document.getElementById('send-btn').innerText = 'Send Message';
       } else {
         html.dir = 'rtl';
         html.lang = 'ar';
         langBtn.innerText = 'English';
-        document.getElementById('home-title').innerText = 'مرحباً بكم في موقع المؤسسة';
-        document.getElementById('home-desc').innerText = 'هذا النص تعريفي عن خدماتنا ومنتجاتنا، يتم استبداله بمحتوى المؤسسة الجاهز.';
+        document.getElementById('home-title').innerText = 'الرئيسية';
+        document.getElementById('home-desc').innerText = 'مرحباً بكم في موقع المؤسسة الرسمي. نقدم أفضل الحلول والخدمات الاحترافية بأسلوب عصري ومتطابق مع هويتنا الرسمية.';
         document.getElementById('about-title').innerText = 'من نحن';
-        document.getElementById('about-desc').innerText = 'مؤسسة متخصصة تقدم أحدث الحلول والخدمات الاحترافية.';
+        document.getElementById('about-desc').innerText = 'مؤسسة رائدة متخصصة في تقديم خدمات ومنتجات عالية الجودة وفق أعلى المعايير الرسمية.';
         document.getElementById('vision-title').innerText = 'الرؤية والرسالة';
-        document.getElementById('vision-desc').innerText = 'رؤيتنا هي الريادة والتميز، ورسالتنا تقديم أفضل جودة لعملائنا.';
+        document.getElementById('vision-desc').innerText = 'رؤيتنا: الريادة والتميز في مجالنا. رسالتنا: تقديم حلول متكاملة تضمن رضا عملائنا وتلبي جميع تطلعاتهم.';
         document.getElementById('ceo-title').innerText = 'كلمة رئيس المؤسسة';
-        document.getElementById('ceo-desc').innerText = 'يسرنا ويسعدنا تقديم أفضل الخدمات لكم والعمل على تطوير قطاعنا باستمرار.';
+        document.getElementById('ceo-desc').innerText = 'نعتز بتقتكم المستمرة بنا ونسعى دائماً لتطوير منتجاتنا وخدماتنا بما يخدم تطلعات عملائنا وشركائنا.';
         document.getElementById('services-title').innerText = 'الخدمات والمنتجات';
-        document.getElementById('services-desc').innerText = 'عرض المنتجات والخدمات الرئيسية للمؤسسة.';
+        document.getElementById('services-desc').innerText = 'استعراض الخدمة/المنتج الحالي المتاح لدى المؤسسة مع توضيح لكافة التفاصيل الخاصة به.';
         document.getElementById('contact-title').innerText = 'تواصل معنا';
+        document.getElementById('name-ph').placeholder = 'الاسم';
+        document.getElementById('email-ph').placeholder = 'البريد الإلكتروني';
+        document.getElementById('msg-ph').placeholder = 'الرسالة';
+        document.getElementById('send-btn').innerText = 'إرسال الرسالة';
       }
     }
   </script>
